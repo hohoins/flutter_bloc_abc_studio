@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_abc_studio/common/sample_data.codegen.dart';
+import 'package:flutter_bloc_abc_studio/feature/example_bloc/exam_bloc.dart';
+import 'package:flutter_bloc_abc_studio/feature/example_bloc/exam_cubit.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_view.dart';
 
@@ -7,9 +9,11 @@ void main() {
   runApp(const MyApp());
 }
 
-const _screens = [
-  SampleData2('Sample Bloc', SampleBlocView()),
-  SampleData2('Sample Selector', SampleSelectorBlocView()),
+final _screens = [
+  const SampleData2('Sample Bloc', SampleBlocView()),
+  const SampleData2('Sample Selector', SampleSelectorBlocView()),
+  const SampleData2('example bloc', ExamBlocView()),
+  const SampleData2('example cubit', ExamCubitView()),
 ];
 
 class MyApp extends StatelessWidget {
