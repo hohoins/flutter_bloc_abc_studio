@@ -1,16 +1,13 @@
 # flutter_bloc_abc_studio
-***
 Future Flutter 2024 sample code
-## ABC Studio flutter blog
-***
+# ABC Studio flutter blog
 - [Flutter 인기 아키텍처 라이브러리 3종 비교 분석 - GetX vs BLoC vs Provider](https://engineering.linecorp.com/ko/blog/flutter-architecture-getx-bloc-provider)
 - [Flutter에서 커스텀 린트 활용하기](https://techblog.lycorp.co.jp/ko/using-custom-lint-in-flutter)
 - [Flutter 패키지로 공통 모듈 리팩토링하기](https://engineering.linecorp.com/ko/blog/common-module-refactoring-with-flutter-package)
 - [멀쩡한 앱을 Flutter 앱으로 다시 짠 이유 - 일본 1위 배달 앱, 두 번째 Recode](https://engineering.linecorp.com/ko/blog/demaecan-2nd-recode-kmm-to-flutter)
 - [Flutter 전환의 마침표 - 일본 1위 배달 앱, 세 번째 Recode](https://techblog.lycorp.co.jp/ko/demaecan-3rd-recode-react-native-to-flutter)
 - [Android 신입 개발자, Flutter로 기술 전환 가보자고](https://engineering.linecorp.com/ko/blog/flutter-onboarding-for-new-employees)
-## ABC Studio blog
-***
+# ABC Studio blog
 - [일본 1위 배달 앱, 바닥부터 다시 짠다 - Recode 프로젝트](https://engineering.linecorp.com/ko/blog/about-demaecan-recode-project)
 - [1,100km 떨어져 있는 사용자를 위한 UX 리서치부터 과감한 리뉴얼까지의 기록](https://techblog.lycorp.co.jp/ko/how-to-ux-research-and-renewal-for-overseas-users)
 - [우선순위에 시달리다 공식을 만들었다](https://techblog.lycorp.co.jp/ko/a-formular-for-prioritizing)
@@ -30,4 +27,3 @@ Future Flutter 2024 sample code
 - [메시징 시스템(a.k.a messaging-hub) 톺아보기](https://engineering.linecorp.com/ko/blog/about-messaging-hub-2)
 - [messaging-hub 트러블 슈팅](https://engineering.linecorp.com/ko/blog/messaing-hub-troubleshooting)
 - [오래된 프로덕트 디자인 리뉴얼하기](https://engineering.linecorp.com/ko/blog/demaecan-product-design-renewal)
-***
