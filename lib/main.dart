@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/common/sample_data.codegen.dart';
 import 'package:flutter_bloc_abc_studio/feature/example_bloc/exam_bloc.dart';
 import 'package:flutter_bloc_abc_studio/feature/example_bloc/exam_cubit.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_view.dart';
+import 'package:flutter_bloc_abc_studio/my_bloc_observer.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
