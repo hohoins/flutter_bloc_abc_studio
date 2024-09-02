@@ -14,6 +14,7 @@ void main() {
 final _screens = [
   const TitleAndWidget('카운터 bloc', CounterBlocView()),
   const TitleAndWidget('카운터 cubit', CounterCubitView()),
+  // const TitleAndWidget('emit 동작 안 함', CounterCubit()),
   const TitleAndWidget('Sample Bloc', SampleBlocView()),
   const TitleAndWidget('Sample Selector', SampleSelectorBlocView()),
 ];

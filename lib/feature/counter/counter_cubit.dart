@@ -2,26 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 // cubit
-class ExamCubit extends Cubit<ExamCubitState> {
-  ExamCubit() : super(const ExamCubitState(0));
+class CounterCubit extends Cubit<int> {
+  CounterCubit() : super(0);
 
   void onTapIncrement() {
-    emit(ExamCubitState(state.counter + 1));
+    emit(state + 1);
   }
 
   void onTapDecrement() {
-    emit(ExamCubitState(state.counter - 1));
+    emit(state - 1);
   }
 
   void onTapReset() {
-    emit(const ExamCubitState(0));
+    emit(0);
   }
-}
-
-// state
-class ExamCubitState {
-  const ExamCubitState(this.counter);
-  final int counter;
 }
 
 // view
@@ -31,7 +25,7 @@ class CounterCubitView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ExamCubit(),
+      create: (_) => CounterCubit(),
       child: Builder(
         builder: (context) {
           return Scaffold(
@@ -39,24 +33,24 @@ class CounterCubitView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('cubit counter'),
-                BlocBuilder<ExamCubit, ExamCubitState>(
+                BlocBuilder<CounterCubit, int>(
                   builder: (context, state) {
-                    return Text('${state.counter}', style: Theme.of(context).textTheme.headlineMedium);
+                    return Text('$state', style: Theme.of(context).textTheme.headlineMedium);
                   },
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OutlinedButton(
-                      onPressed: context.read<ExamCubit>().onTapIncrement,
+                      onPressed: context.read<CounterCubit>().onTapIncrement,
                       child: const Icon(Icons.add),
                     ),
                     OutlinedButton(
-                      onPressed: context.read<ExamCubit>().onTapDecrement,
+                      onPressed: context.read<CounterCubit>().onTapDecrement,
                       child: const Icon(Icons.remove),
                     ),
                     OutlinedButton(
-                      onPressed: context.read<ExamCubit>().onTapReset,
+                      onPressed: context.read<CounterCubit>().onTapReset,
                       child: const Icon(Icons.refresh),
                     ),
                   ],
