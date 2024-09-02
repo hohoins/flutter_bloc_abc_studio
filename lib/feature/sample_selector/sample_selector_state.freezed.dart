@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sample_selector_state.codegen.dart';
+part of 'sample_selector_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -17,6 +17,129 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SampleSelectorState {
   SampleSelectorData get data => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SampleSelectorData data) empty,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SampleSelectorData data)? empty,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SampleSelectorData data)? empty,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty value) empty,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Empty value)? empty,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty value)? empty,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of SampleSelectorState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SampleSelectorStateCopyWith<SampleSelectorState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SampleSelectorStateCopyWith<$Res> {
+  factory $SampleSelectorStateCopyWith(
+          SampleSelectorState value, $Res Function(SampleSelectorState) then) =
+      _$SampleSelectorStateCopyWithImpl<$Res, SampleSelectorState>;
+  @useResult
+  $Res call({SampleSelectorData data});
+
+  $SampleSelectorDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class _$SampleSelectorStateCopyWithImpl<$Res, $Val extends SampleSelectorState>
+    implements $SampleSelectorStateCopyWith<$Res> {
+  _$SampleSelectorStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SampleSelectorState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_value.copyWith(
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SampleSelectorData,
+    ) as $Val);
+  }
+
+  /// Create a copy of SampleSelectorState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SampleSelectorDataCopyWith<$Res> get data {
+    return $SampleSelectorDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$EmptyImplCopyWith<$Res>
+    implements $SampleSelectorStateCopyWith<$Res> {
+  factory _$$EmptyImplCopyWith(
+          _$EmptyImpl value, $Res Function(_$EmptyImpl) then) =
+      __$$EmptyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({SampleSelectorData data});
+
+  @override
+  $SampleSelectorDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$EmptyImplCopyWithImpl<$Res>
+    extends _$SampleSelectorStateCopyWithImpl<$Res, _$EmptyImpl>
+    implements _$$EmptyImplCopyWith<$Res> {
+  __$$EmptyImplCopyWithImpl(
+      _$EmptyImpl _value, $Res Function(_$EmptyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SampleSelectorState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$EmptyImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SampleSelectorData,
+    ));
+  }
 }
 
 /// @nodoc
@@ -42,6 +165,70 @@ class _$EmptyImpl extends Empty {
 
   @override
   int get hashCode => Object.hash(runtimeType, data);
+
+  /// Create a copy of SampleSelectorState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmptyImplCopyWith<_$EmptyImpl> get copyWith =>
+      __$$EmptyImplCopyWithImpl<_$EmptyImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(SampleSelectorData data) empty,
+  }) {
+    return empty(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(SampleSelectorData data)? empty,
+  }) {
+    return empty?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(SampleSelectorData data)? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Empty value) empty,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Empty value)? empty,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Empty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class Empty extends SampleSelectorState {
@@ -50,6 +237,13 @@ abstract class Empty extends SampleSelectorState {
 
   @override
   SampleSelectorData get data;
+
+  /// Create a copy of SampleSelectorState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EmptyImplCopyWith<_$EmptyImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

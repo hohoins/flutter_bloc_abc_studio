@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_state.codegen.dart';
+import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_state.dart';
 
 class SampleSelectorCubit extends Cubit<SampleSelectorState> {
   SampleSelectorCubit() : super(_initState);

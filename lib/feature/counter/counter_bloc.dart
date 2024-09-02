@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// bloc
 class ExamBloc extends Bloc<ExamBlocEvent, ExamBlocState> {
   ExamBloc() : super(const ExamBlocState(0)) {
     on<ExamIncrement>(_handleIncrement);
@@ -36,8 +37,8 @@ class ExamBlocState {
 }
 
 // view
-class ExamBlocView extends StatelessWidget {
-  const ExamBlocView({super.key});
+class CounterBlocView extends StatelessWidget {
+  const CounterBlocView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/common/bloc_selector.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_cubit.dart';
-import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_state.codegen.dart';
+import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_state.dart';
 
 class SampleSelectorBlocView extends StatelessWidget {
   const SampleSelectorBlocView({super.key});

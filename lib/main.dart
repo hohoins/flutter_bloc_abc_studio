@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_abc_studio/common/sample_data.codegen.dart';
-import 'package:flutter_bloc_abc_studio/feature/example_bloc/exam_bloc.dart';
-import 'package:flutter_bloc_abc_studio/feature/example_bloc/exam_cubit.dart';
+import 'package:flutter_bloc_abc_studio/feature/counter/counter_bloc.dart';
+import 'package:flutter_bloc_abc_studio/feature/counter/counter_cubit.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_view.dart';
 import 'package:flutter_bloc_abc_studio/my_bloc_observer.dart';
@@ -13,10 +12,10 @@ void main() {
 }
 
 final _screens = [
-  const SampleData2('Sample Bloc', SampleBlocView()),
-  const SampleData2('Sample Selector', SampleSelectorBlocView()),
-  const SampleData2('example bloc', ExamBlocView()),
-  const SampleData2('example cubit', ExamCubitView()),
+  const TitleAndWidget('카운터 bloc', CounterBlocView()),
+  const TitleAndWidget('카운터 cubit', CounterCubitView()),
+  const TitleAndWidget('Sample Bloc', SampleBlocView()),
+  const TitleAndWidget('Sample Selector', SampleSelectorBlocView()),
 ];
 
 class MyApp extends StatelessWidget {
@@ -25,24 +24,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: Scaffold(
-        body: ListView.builder(
-          itemCount: _screens.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text('${_screens[index].t1}'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => _screens[index].t2));
-              },
-            );
-          },
+        body: SafeArea(
+          child: ListView.builder(
+            itemCount: _screens.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(_screens[index].title),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => _screens[index].widget));
+                },
+              );
+            },
+          ),
         ),
       ),
     );
   }
+}
+
+class TitleAndWidget {
+  const TitleAndWidget(this.title, this.widget);
+  final String title;
+  final Widget widget;
 }

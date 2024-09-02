@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// cubit
 class ExamCubit extends Cubit<ExamCubitState> {
   ExamCubit() : super(const ExamCubitState(0));
 
@@ -24,8 +25,8 @@ class ExamCubitState {
 }
 
 // view
-class ExamCubitView extends StatelessWidget {
-  const ExamCubitView({super.key});
+class CounterCubitView extends StatelessWidget {
+  const CounterCubitView({super.key});
 
   @override
   Widget build(BuildContext context) {

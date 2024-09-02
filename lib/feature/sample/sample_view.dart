@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_cubit.dart';
-import 'package:flutter_bloc_abc_studio/feature/sample/sample_state.codegen.dart';
+import 'package:flutter_bloc_abc_studio/feature/sample/sample_state.dart';
 
 class SampleBlocView extends StatelessWidget {
   const SampleBlocView({super.key});

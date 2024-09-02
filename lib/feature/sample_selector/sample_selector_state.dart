@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'sample_selector_state.codegen.freezed.dart';
+part 'sample_selector_state.freezed.dart';
 
-@Freezed(toStringOverride: true, equal: true)
+@freezed
 sealed class SampleSelectorState with _$SampleSelectorState {
   const factory SampleSelectorState.empty(SampleSelectorData data) = Empty;
 
@@ -12,7 +12,7 @@ sealed class SampleSelectorState with _$SampleSelectorState {
   int get countC => data.countC;
 }
 
-@Freezed(toStringOverride: true, equal: true, copyWith: true)
+@freezed
 class SampleSelectorData with _$SampleSelectorData {
   const factory SampleSelectorData({
     @Default(0) int countA,
