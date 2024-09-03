@@ -4,6 +4,10 @@ import 'package:flutter_bloc_abc_studio/feature/counter/counter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/feature/counter/counter_cubit.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_view.dart';
+import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_copy.dart';
+import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_copywith.dart';
+import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_error.dart';
+import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_freezed.dart';
 import 'package:flutter_bloc_abc_studio/my_bloc_observer.dart';
 
 void main() {
@@ -14,8 +18,11 @@ void main() {
 final _screens = [
   const TitleAndWidget('카운터 bloc', CounterBlocView()),
   const TitleAndWidget('카운터 cubit', CounterCubitView()),
-  // const TitleAndWidget('emit 동작 안 함', CounterCubit()),
-  const TitleAndWidget('Sample Bloc', SampleBlocView()),
+  const TitleAndWidget('#1 emit() 동작 안 함', EmitErrorView()),
+  const TitleAndWidget('#2 emit() 수동 복사', EmitCopyView()),
+  const TitleAndWidget('#3 emit() copyWith', EmitCopyWithView()),
+  const TitleAndWidget('#4 emit() freezed', EmitFreezedView()),
+  const TitleAndWidget('SampleBlocView', SampleBlocView()),
   const TitleAndWidget('Sample Selector', SampleSelectorBlocView()),
 ];
 
