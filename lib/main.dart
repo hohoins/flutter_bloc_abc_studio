@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/feature/counter/counter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/feature/counter/counter_cubit.dart';
 import 'package:flutter_bloc_abc_studio/feature/one_time/one_time_ng.dart';
+import 'package:flutter_bloc_abc_studio/feature/one_time/one_time_ng2.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_copy.dart';
@@ -24,6 +25,7 @@ List<TitleAndWidget> get _screens => [
       const TitleAndWidget('#3 emit() copyWith', EmitCopyWithView()),
       const TitleAndWidget('#4 emit() freezed', EmitFreezedView()),
       const TitleAndWidget('#1 OneTime, NG', OneTimeNgView()),
+      const TitleAndWidget('#2 OneTime, NG2', OneTimeNg2View()),
       const TitleAndWidget('SampleBlocView', SampleBlocView()),
       const TitleAndWidget('Sample Selector', SampleSelectorBlocView()),
     ];

@@ -29,7 +29,12 @@ class OneTimeNgCubit extends Cubit<OneTimeNgState> {
 enum OneTimeNgStatus { initial, loading, success, failure }
 
 class OneTimeNgState {
-  const OneTimeNgState(this.status, this.counterA, this.counterB, this.counterC);
+  const OneTimeNgState(
+    this.status,
+    this.counterA,
+    this.counterB,
+    this.counterC,
+  );
   final OneTimeNgStatus status;
   final int counterA;
   final int counterB;
@@ -37,6 +42,8 @@ class OneTimeNgState {
 
   OneTimeNgState copyWith({
     OneTimeNgStatus? status,
+    int? errorCode,
+    String? errorMessage,
     int? counterA,
     int? counterB,
     int? counterC,
@@ -66,7 +73,7 @@ class OneTimeNgView extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('성공\n데이터 업데이트\nFuture<Flutter> 2024'),
-                      duration: Duration(milliseconds: 50000),
+                      duration: Duration(milliseconds: 500),
                     ),
                   );
                 }
