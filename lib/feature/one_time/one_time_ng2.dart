@@ -184,7 +184,7 @@ class OneTimeNg2View extends StatelessWidget {
 }
 
 class _Contents extends StatelessWidget {
-  const _Contents({super.key});
+  const _Contents();
 
   @override
   Widget build(BuildContext context) {

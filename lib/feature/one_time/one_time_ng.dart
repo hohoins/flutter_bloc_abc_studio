@@ -26,20 +26,20 @@ class OneTimeNgCubit extends Cubit<OneTimeNgState> {
   }
 }
 
-enum OneTimeNgStatus { initial, loading, success, failure }
+enum OneTimeNgStatus { initial, loading, success }
 
 class OneTimeNgState {
+  final OneTimeNgStatus status;
+  final int counterA;
+  final int counterB;
+  final int counterC;
+
   const OneTimeNgState(
     this.status,
     this.counterA,
     this.counterB,
     this.counterC,
   );
-  final OneTimeNgStatus status;
-  final int counterA;
-  final int counterB;
-  final int counterC;
-
   OneTimeNgState copyWith({
     OneTimeNgStatus? status,
     int? errorCode,
@@ -88,7 +88,7 @@ class OneTimeNgView extends StatelessWidget {
 }
 
 class _Contents extends StatelessWidget {
-  const _Contents({super.key});
+  const _Contents();
 
   @override
   Widget build(BuildContext context) {
