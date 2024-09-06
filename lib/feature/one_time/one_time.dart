@@ -8,57 +8,40 @@ class OneTimeCubit extends Cubit<OneTimeState> {
   OneTimeCubit() : super(const OneTimeState.empty(OneTimeData()));
 
   void onTapIncrementA() {
-    // emit(state.copyWith(counterA: state.counterA + 1));
     emit(OneTimeState.empty(state.data.copyWith(counterA: state.data.counterA + 1)));
-    _goToPrevPage();
   }
 
   void onTapIncrementB() {
-    // emit(state.copyWith(counterB: state.counterB + 1));
     emit(OneTimeState.empty(state.data.copyWith(counterB: state.data.counterB + 1)));
-    _goToNextPage();
   }
 
   void onTapIncrementC() {
-    // emit(state.copyWith(counterC: state.counterC + 1));
     emit(OneTimeState.empty(state.data.copyWith(counterC: state.data.counterC + 1)));
-    _showDialog();
   }
 
   void onTapLoadData() async {
-    // emit(state.copyWith(status: OneTimeStatus.loading));
     emit(OneTimeState.empty(state.data.copyWith(status: OneTimeStatus.loading)));
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(milliseconds: 500));
     final isError = Random().nextBool();
     if (isError) {
-      // emit(
-      //   state.copyWith(status: OneTimeStatus.failure, errorCode: 500, errorMessage: 'Server Error'),
-      // );
-      emit(OneTimeState.showErrorDialog(state.data, 500, 'Server Error'));
+      _showDialog('data loading error');
       emit(OneTimeState.empty(state.data.copyWith(status: OneTimeStatus.initial)));
     } else {
-      // emit(state.copyWith(status: OneTimeStatus.success));
       emit(OneTimeState.empty(state.data.copyWith(status: OneTimeStatus.success)));
       emit(OneTimeState.showSnackBar(state.data));
     }
   }
 
   void _goToNextPage() {
-    // emit(
-    //   state.copyWith(status: OneTimeNg2Status.nextPage, nextPageData: state.counterA + state.counterB + state.counterC),
-    // );
-    final sum = state.data.counterA + state.data.counterB + state.data.counterC;
-    emit(OneTimeState.goToNextPage(state.data, sum));
+    emit(OneTimeState.goToNextPage(state.data, 200));
   }
 
   void _goToPrevPage() {
-    // emit(state.copyWith(status: OneTimeNg2Status.prevPage));
-    emit(OneTimeState.goToPrevPage(state.data));
+    emit(OneTimeState.goToPrevPage(state.data, 404));
   }
 
-  void _showDialog() {
-    // emit(state.copyWith(status: OneTimeNg2Status.dialog, dialogMessage: 'Dialog Message: ${state.counterA}'));
-    emit(OneTimeState.showDialog(state.data, 'Dialog Message: ${state.data.counterA}'));
+  void _showDialog(String message) {
+    emit(OneTimeState.showDialog(state.data, message));
   }
 }
 
@@ -77,14 +60,12 @@ class OneTimeView extends StatelessWidget {
                 switch (state) {
                   case ShowSnackBar():
                     _showSnackBar(context);
-                  case ShowErrorDialog(:final errorCode, :final errorMessage):
-                    _showErrorDialog(context, errorCode, errorMessage);
                   case ShowDialog(:final dialogMessage):
                     _showDialog(context, dialogMessage);
-                  case GoToPrevPage():
-                    _prevPage(context);
+                  case GoToPrevPage(:final prevPageData):
+                    _goToPrevPage(context, prevPageData);
                   case GoToNextPage(:final nextPageData):
-                    _nextPage(context, nextPageData);
+                    _goToNextPage(context, nextPageData);
                   case Empty():
                     break;
                 }
@@ -106,31 +87,13 @@ class OneTimeView extends StatelessWidget {
     );
   }
 
-  void _showErrorDialog(BuildContext context, int errorCode, String errorMessage) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('Error'),
-          content: Text('Error Code: $errorCode\nError Message: $errorMessage'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  void _showDialog(BuildContext context, String dialogMessage) {
+  void _showDialog(BuildContext context, String message) {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: const Text('Dialog'),
-          content: Text(dialogMessage),
+          content: Text(message),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
@@ -142,9 +105,13 @@ class OneTimeView extends StatelessWidget {
     );
   }
 
-  void _prevPage(BuildContext context) {}
+  void _goToPrevPage(BuildContext context, int prevPageData) {
+    debugPrint('pop, goToPrevPage: $prevPageData');
+  }
 
-  void _nextPage(BuildContext context, int nextPageData) {}
+  void _goToNextPage(BuildContext context, int nextPageData) {
+    debugPrint('pop, goToNextPage: $nextPageData');
+  }
 }
 
 class _Contents extends StatelessWidget {
@@ -153,25 +120,25 @@ class _Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<OneTimeCubit, OneTimeState>(builder: (context, state) {
-      Widget dataLoadWidget;
+      Widget loadButton;
       if (state.data.status == OneTimeStatus.loading) {
-        dataLoadWidget = const CircularProgressIndicator();
+        loadButton = const CircularProgressIndicator();
       } else {
-        dataLoadWidget = Column(
-          children: [
-            Text('status: ${state.data.status.name}', style: Theme.of(context).textTheme.headlineMedium),
-            OutlinedButton(
-              onPressed: context.read<OneTimeCubit>().onTapLoadData,
-              child: Text('Load Data', style: Theme.of(context).textTheme.headlineMedium),
-            )
-          ],
+        loadButton = OutlinedButton(
+          onPressed: context.read<OneTimeCubit>().onTapLoadData,
+          child: Text('Load Data', style: Theme.of(context).textTheme.headlineMedium),
         );
       }
 
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          dataLoadWidget,
+          Column(
+            children: [
+              Text('status: ${state.data.status.name}', style: Theme.of(context).textTheme.headlineMedium),
+              loadButton,
+            ],
+          ),
           const SizedBox(height: 10),
           Container(height: 1, color: Colors.black),
           const SizedBox(height: 10),

@@ -22,8 +22,8 @@ void main() {
 }
 
 List<TitleAndWidget> get _screens => [
-      const TitleAndWidget('카운터 bloc', CounterBlocView()),
-      const TitleAndWidget('카운터 cubit', CounterCubitView()),
+      const TitleAndWidget('Cubit vs Bloc, Bloc', CounterBlocView()),
+      const TitleAndWidget('Cubit vs Bloc, Cubit', CounterCubitView()),
       const TitleAndWidget('#1 emit() 동작 안 함', EmitErrorView()),
       const TitleAndWidget('#2 emit() 수동 복사', EmitCopyView()),
       const TitleAndWidget('#3 emit() copyWith', EmitCopyWithView()),

@@ -8,8 +8,7 @@ sealed class OneTimeState with _$OneTimeState {
   const factory OneTimeState.empty(OneTimeData data) = Empty;
   const factory OneTimeState.showSnackBar(OneTimeData data) = ShowSnackBar;
   const factory OneTimeState.showDialog(OneTimeData data, String dialogMessage) = ShowDialog;
-  const factory OneTimeState.showErrorDialog(OneTimeData data, int errorCode, String errorMessage) = ShowErrorDialog;
-  const factory OneTimeState.goToPrevPage(OneTimeData data) = GoToPrevPage;
+  const factory OneTimeState.goToPrevPage(OneTimeData data, int prevPageData) = GoToPrevPage;
   const factory OneTimeState.goToNextPage(OneTimeData data, int nextPageData) = GoToNextPage;
 }
 

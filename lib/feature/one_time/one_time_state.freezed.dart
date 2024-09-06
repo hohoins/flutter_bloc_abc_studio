@@ -23,10 +23,7 @@ mixin _$OneTimeState {
     required TResult Function(OneTimeData data) showSnackBar,
     required TResult Function(OneTimeData data, String dialogMessage)
         showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
+    required TResult Function(OneTimeData data, int prevPageData) goToPrevPage,
     required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
   }) =>
       throw _privateConstructorUsedError;
@@ -35,9 +32,7 @@ mixin _$OneTimeState {
     TResult? Function(OneTimeData data)? empty,
     TResult? Function(OneTimeData data)? showSnackBar,
     TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
+    TResult? Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,9 +41,7 @@ mixin _$OneTimeState {
     TResult Function(OneTimeData data)? empty,
     TResult Function(OneTimeData data)? showSnackBar,
     TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
+    TResult Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
     required TResult orElse(),
   }) =>
@@ -58,7 +51,6 @@ mixin _$OneTimeState {
     required TResult Function(Empty value) empty,
     required TResult Function(ShowSnackBar value) showSnackBar,
     required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
     required TResult Function(GoToPrevPage value) goToPrevPage,
     required TResult Function(GoToNextPage value) goToNextPage,
   }) =>
@@ -68,7 +60,6 @@ mixin _$OneTimeState {
     TResult? Function(Empty value)? empty,
     TResult? Function(ShowSnackBar value)? showSnackBar,
     TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
     TResult? Function(GoToPrevPage value)? goToPrevPage,
     TResult? Function(GoToNextPage value)? goToNextPage,
   }) =>
@@ -78,7 +69,6 @@ mixin _$OneTimeState {
     TResult Function(Empty value)? empty,
     TResult Function(ShowSnackBar value)? showSnackBar,
     TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
     TResult Function(GoToPrevPage value)? goToPrevPage,
     TResult Function(GoToNextPage value)? goToNextPage,
     required TResult orElse(),
@@ -216,10 +206,7 @@ class _$EmptyImpl implements Empty {
     required TResult Function(OneTimeData data) showSnackBar,
     required TResult Function(OneTimeData data, String dialogMessage)
         showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
+    required TResult Function(OneTimeData data, int prevPageData) goToPrevPage,
     required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
   }) {
     return empty(data);
@@ -231,9 +218,7 @@ class _$EmptyImpl implements Empty {
     TResult? Function(OneTimeData data)? empty,
     TResult? Function(OneTimeData data)? showSnackBar,
     TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
+    TResult? Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
   }) {
     return empty?.call(data);
@@ -245,9 +230,7 @@ class _$EmptyImpl implements Empty {
     TResult Function(OneTimeData data)? empty,
     TResult Function(OneTimeData data)? showSnackBar,
     TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
+    TResult Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
     required TResult orElse(),
   }) {
@@ -263,7 +246,6 @@ class _$EmptyImpl implements Empty {
     required TResult Function(Empty value) empty,
     required TResult Function(ShowSnackBar value) showSnackBar,
     required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
     required TResult Function(GoToPrevPage value) goToPrevPage,
     required TResult Function(GoToNextPage value) goToNextPage,
   }) {
@@ -276,7 +258,6 @@ class _$EmptyImpl implements Empty {
     TResult? Function(Empty value)? empty,
     TResult? Function(ShowSnackBar value)? showSnackBar,
     TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
     TResult? Function(GoToPrevPage value)? goToPrevPage,
     TResult? Function(GoToNextPage value)? goToNextPage,
   }) {
@@ -289,7 +270,6 @@ class _$EmptyImpl implements Empty {
     TResult Function(Empty value)? empty,
     TResult Function(ShowSnackBar value)? showSnackBar,
     TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
     TResult Function(GoToPrevPage value)? goToPrevPage,
     TResult Function(GoToNextPage value)? goToNextPage,
     required TResult orElse(),
@@ -392,10 +372,7 @@ class _$ShowSnackBarImpl implements ShowSnackBar {
     required TResult Function(OneTimeData data) showSnackBar,
     required TResult Function(OneTimeData data, String dialogMessage)
         showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
+    required TResult Function(OneTimeData data, int prevPageData) goToPrevPage,
     required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
   }) {
     return showSnackBar(data);
@@ -407,9 +384,7 @@ class _$ShowSnackBarImpl implements ShowSnackBar {
     TResult? Function(OneTimeData data)? empty,
     TResult? Function(OneTimeData data)? showSnackBar,
     TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
+    TResult? Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
   }) {
     return showSnackBar?.call(data);
@@ -421,9 +396,7 @@ class _$ShowSnackBarImpl implements ShowSnackBar {
     TResult Function(OneTimeData data)? empty,
     TResult Function(OneTimeData data)? showSnackBar,
     TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
+    TResult Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
     required TResult orElse(),
   }) {
@@ -439,7 +412,6 @@ class _$ShowSnackBarImpl implements ShowSnackBar {
     required TResult Function(Empty value) empty,
     required TResult Function(ShowSnackBar value) showSnackBar,
     required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
     required TResult Function(GoToPrevPage value) goToPrevPage,
     required TResult Function(GoToNextPage value) goToNextPage,
   }) {
@@ -452,7 +424,6 @@ class _$ShowSnackBarImpl implements ShowSnackBar {
     TResult? Function(Empty value)? empty,
     TResult? Function(ShowSnackBar value)? showSnackBar,
     TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
     TResult? Function(GoToPrevPage value)? goToPrevPage,
     TResult? Function(GoToNextPage value)? goToNextPage,
   }) {
@@ -465,7 +436,6 @@ class _$ShowSnackBarImpl implements ShowSnackBar {
     TResult Function(Empty value)? empty,
     TResult Function(ShowSnackBar value)? showSnackBar,
     TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
     TResult Function(GoToPrevPage value)? goToPrevPage,
     TResult Function(GoToNextPage value)? goToNextPage,
     required TResult orElse(),
@@ -577,10 +547,7 @@ class _$ShowDialogImpl implements ShowDialog {
     required TResult Function(OneTimeData data) showSnackBar,
     required TResult Function(OneTimeData data, String dialogMessage)
         showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
+    required TResult Function(OneTimeData data, int prevPageData) goToPrevPage,
     required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
   }) {
     return showDialog(data, dialogMessage);
@@ -592,9 +559,7 @@ class _$ShowDialogImpl implements ShowDialog {
     TResult? Function(OneTimeData data)? empty,
     TResult? Function(OneTimeData data)? showSnackBar,
     TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
+    TResult? Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
   }) {
     return showDialog?.call(data, dialogMessage);
@@ -606,9 +571,7 @@ class _$ShowDialogImpl implements ShowDialog {
     TResult Function(OneTimeData data)? empty,
     TResult Function(OneTimeData data)? showSnackBar,
     TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
+    TResult Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
     required TResult orElse(),
   }) {
@@ -624,7 +587,6 @@ class _$ShowDialogImpl implements ShowDialog {
     required TResult Function(Empty value) empty,
     required TResult Function(ShowSnackBar value) showSnackBar,
     required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
     required TResult Function(GoToPrevPage value) goToPrevPage,
     required TResult Function(GoToNextPage value) goToNextPage,
   }) {
@@ -637,7 +599,6 @@ class _$ShowDialogImpl implements ShowDialog {
     TResult? Function(Empty value)? empty,
     TResult? Function(ShowSnackBar value)? showSnackBar,
     TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
     TResult? Function(GoToPrevPage value)? goToPrevPage,
     TResult? Function(GoToNextPage value)? goToNextPage,
   }) {
@@ -650,7 +611,6 @@ class _$ShowDialogImpl implements ShowDialog {
     TResult Function(Empty value)? empty,
     TResult Function(ShowSnackBar value)? showSnackBar,
     TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
     TResult Function(GoToPrevPage value)? goToPrevPage,
     TResult Function(GoToNextPage value)? goToNextPage,
     required TResult orElse(),
@@ -679,204 +639,6 @@ abstract class ShowDialog implements OneTimeState {
 }
 
 /// @nodoc
-abstract class _$$ShowErrorDialogImplCopyWith<$Res>
-    implements $OneTimeStateCopyWith<$Res> {
-  factory _$$ShowErrorDialogImplCopyWith(_$ShowErrorDialogImpl value,
-          $Res Function(_$ShowErrorDialogImpl) then) =
-      __$$ShowErrorDialogImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({OneTimeData data, int errorCode, String errorMessage});
-
-  @override
-  $OneTimeDataCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$ShowErrorDialogImplCopyWithImpl<$Res>
-    extends _$OneTimeStateCopyWithImpl<$Res, _$ShowErrorDialogImpl>
-    implements _$$ShowErrorDialogImplCopyWith<$Res> {
-  __$$ShowErrorDialogImplCopyWithImpl(
-      _$ShowErrorDialogImpl _value, $Res Function(_$ShowErrorDialogImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of OneTimeState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? errorCode = null,
-    Object? errorMessage = null,
-  }) {
-    return _then(_$ShowErrorDialogImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as OneTimeData,
-      null == errorCode
-          ? _value.errorCode
-          : errorCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ShowErrorDialogImpl implements ShowErrorDialog {
-  const _$ShowErrorDialogImpl(this.data, this.errorCode, this.errorMessage);
-
-  @override
-  final OneTimeData data;
-  @override
-  final int errorCode;
-  @override
-  final String errorMessage;
-
-  @override
-  String toString() {
-    return 'OneTimeState.showErrorDialog(data: $data, errorCode: $errorCode, errorMessage: $errorMessage)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ShowErrorDialogImpl &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.errorCode, errorCode) ||
-                other.errorCode == errorCode) &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data, errorCode, errorMessage);
-
-  /// Create a copy of OneTimeState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ShowErrorDialogImplCopyWith<_$ShowErrorDialogImpl> get copyWith =>
-      __$$ShowErrorDialogImplCopyWithImpl<_$ShowErrorDialogImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(OneTimeData data) empty,
-    required TResult Function(OneTimeData data) showSnackBar,
-    required TResult Function(OneTimeData data, String dialogMessage)
-        showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
-    required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
-  }) {
-    return showErrorDialog(data, errorCode, errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(OneTimeData data)? empty,
-    TResult? Function(OneTimeData data)? showSnackBar,
-    TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
-    TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
-  }) {
-    return showErrorDialog?.call(data, errorCode, errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(OneTimeData data)? empty,
-    TResult Function(OneTimeData data)? showSnackBar,
-    TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
-    TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
-    required TResult orElse(),
-  }) {
-    if (showErrorDialog != null) {
-      return showErrorDialog(data, errorCode, errorMessage);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Empty value) empty,
-    required TResult Function(ShowSnackBar value) showSnackBar,
-    required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
-    required TResult Function(GoToPrevPage value) goToPrevPage,
-    required TResult Function(GoToNextPage value) goToNextPage,
-  }) {
-    return showErrorDialog(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Empty value)? empty,
-    TResult? Function(ShowSnackBar value)? showSnackBar,
-    TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
-    TResult? Function(GoToPrevPage value)? goToPrevPage,
-    TResult? Function(GoToNextPage value)? goToNextPage,
-  }) {
-    return showErrorDialog?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Empty value)? empty,
-    TResult Function(ShowSnackBar value)? showSnackBar,
-    TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
-    TResult Function(GoToPrevPage value)? goToPrevPage,
-    TResult Function(GoToNextPage value)? goToNextPage,
-    required TResult orElse(),
-  }) {
-    if (showErrorDialog != null) {
-      return showErrorDialog(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ShowErrorDialog implements OneTimeState {
-  const factory ShowErrorDialog(final OneTimeData data, final int errorCode,
-      final String errorMessage) = _$ShowErrorDialogImpl;
-
-  @override
-  OneTimeData get data;
-  int get errorCode;
-  String get errorMessage;
-
-  /// Create a copy of OneTimeState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ShowErrorDialogImplCopyWith<_$ShowErrorDialogImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 abstract class _$$GoToPrevPageImplCopyWith<$Res>
     implements $OneTimeStateCopyWith<$Res> {
   factory _$$GoToPrevPageImplCopyWith(
@@ -884,7 +646,7 @@ abstract class _$$GoToPrevPageImplCopyWith<$Res>
       __$$GoToPrevPageImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({OneTimeData data});
+  $Res call({OneTimeData data, int prevPageData});
 
   @override
   $OneTimeDataCopyWith<$Res> get data;
@@ -904,12 +666,17 @@ class __$$GoToPrevPageImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? prevPageData = null,
   }) {
     return _then(_$GoToPrevPageImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as OneTimeData,
+      null == prevPageData
+          ? _value.prevPageData
+          : prevPageData // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -917,14 +684,16 @@ class __$$GoToPrevPageImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GoToPrevPageImpl implements GoToPrevPage {
-  const _$GoToPrevPageImpl(this.data);
+  const _$GoToPrevPageImpl(this.data, this.prevPageData);
 
   @override
   final OneTimeData data;
+  @override
+  final int prevPageData;
 
   @override
   String toString() {
-    return 'OneTimeState.goToPrevPage(data: $data)';
+    return 'OneTimeState.goToPrevPage(data: $data, prevPageData: $prevPageData)';
   }
 
   @override
@@ -932,11 +701,13 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GoToPrevPageImpl &&
-            (identical(other.data, data) || other.data == data));
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.prevPageData, prevPageData) ||
+                other.prevPageData == prevPageData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(runtimeType, data, prevPageData);
 
   /// Create a copy of OneTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -953,13 +724,10 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     required TResult Function(OneTimeData data) showSnackBar,
     required TResult Function(OneTimeData data, String dialogMessage)
         showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
+    required TResult Function(OneTimeData data, int prevPageData) goToPrevPage,
     required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
   }) {
-    return goToPrevPage(data);
+    return goToPrevPage(data, prevPageData);
   }
 
   @override
@@ -968,12 +736,10 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     TResult? Function(OneTimeData data)? empty,
     TResult? Function(OneTimeData data)? showSnackBar,
     TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
+    TResult? Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
   }) {
-    return goToPrevPage?.call(data);
+    return goToPrevPage?.call(data, prevPageData);
   }
 
   @override
@@ -982,14 +748,12 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     TResult Function(OneTimeData data)? empty,
     TResult Function(OneTimeData data)? showSnackBar,
     TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
+    TResult Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
     required TResult orElse(),
   }) {
     if (goToPrevPage != null) {
-      return goToPrevPage(data);
+      return goToPrevPage(data, prevPageData);
     }
     return orElse();
   }
@@ -1000,7 +764,6 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     required TResult Function(Empty value) empty,
     required TResult Function(ShowSnackBar value) showSnackBar,
     required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
     required TResult Function(GoToPrevPage value) goToPrevPage,
     required TResult Function(GoToNextPage value) goToNextPage,
   }) {
@@ -1013,7 +776,6 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     TResult? Function(Empty value)? empty,
     TResult? Function(ShowSnackBar value)? showSnackBar,
     TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
     TResult? Function(GoToPrevPage value)? goToPrevPage,
     TResult? Function(GoToNextPage value)? goToNextPage,
   }) {
@@ -1026,7 +788,6 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
     TResult Function(Empty value)? empty,
     TResult Function(ShowSnackBar value)? showSnackBar,
     TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
     TResult Function(GoToPrevPage value)? goToPrevPage,
     TResult Function(GoToNextPage value)? goToNextPage,
     required TResult orElse(),
@@ -1039,10 +800,12 @@ class _$GoToPrevPageImpl implements GoToPrevPage {
 }
 
 abstract class GoToPrevPage implements OneTimeState {
-  const factory GoToPrevPage(final OneTimeData data) = _$GoToPrevPageImpl;
+  const factory GoToPrevPage(final OneTimeData data, final int prevPageData) =
+      _$GoToPrevPageImpl;
 
   @override
   OneTimeData get data;
+  int get prevPageData;
 
   /// Create a copy of OneTimeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1138,10 +901,7 @@ class _$GoToNextPageImpl implements GoToNextPage {
     required TResult Function(OneTimeData data) showSnackBar,
     required TResult Function(OneTimeData data, String dialogMessage)
         showDialog,
-    required TResult Function(
-            OneTimeData data, int errorCode, String errorMessage)
-        showErrorDialog,
-    required TResult Function(OneTimeData data) goToPrevPage,
+    required TResult Function(OneTimeData data, int prevPageData) goToPrevPage,
     required TResult Function(OneTimeData data, int nextPageData) goToNextPage,
   }) {
     return goToNextPage(data, nextPageData);
@@ -1153,9 +913,7 @@ class _$GoToNextPageImpl implements GoToNextPage {
     TResult? Function(OneTimeData data)? empty,
     TResult? Function(OneTimeData data)? showSnackBar,
     TResult? Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult? Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult? Function(OneTimeData data)? goToPrevPage,
+    TResult? Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult? Function(OneTimeData data, int nextPageData)? goToNextPage,
   }) {
     return goToNextPage?.call(data, nextPageData);
@@ -1167,9 +925,7 @@ class _$GoToNextPageImpl implements GoToNextPage {
     TResult Function(OneTimeData data)? empty,
     TResult Function(OneTimeData data)? showSnackBar,
     TResult Function(OneTimeData data, String dialogMessage)? showDialog,
-    TResult Function(OneTimeData data, int errorCode, String errorMessage)?
-        showErrorDialog,
-    TResult Function(OneTimeData data)? goToPrevPage,
+    TResult Function(OneTimeData data, int prevPageData)? goToPrevPage,
     TResult Function(OneTimeData data, int nextPageData)? goToNextPage,
     required TResult orElse(),
   }) {
@@ -1185,7 +941,6 @@ class _$GoToNextPageImpl implements GoToNextPage {
     required TResult Function(Empty value) empty,
     required TResult Function(ShowSnackBar value) showSnackBar,
     required TResult Function(ShowDialog value) showDialog,
-    required TResult Function(ShowErrorDialog value) showErrorDialog,
     required TResult Function(GoToPrevPage value) goToPrevPage,
     required TResult Function(GoToNextPage value) goToNextPage,
   }) {
@@ -1198,7 +953,6 @@ class _$GoToNextPageImpl implements GoToNextPage {
     TResult? Function(Empty value)? empty,
     TResult? Function(ShowSnackBar value)? showSnackBar,
     TResult? Function(ShowDialog value)? showDialog,
-    TResult? Function(ShowErrorDialog value)? showErrorDialog,
     TResult? Function(GoToPrevPage value)? goToPrevPage,
     TResult? Function(GoToNextPage value)? goToNextPage,
   }) {
@@ -1211,7 +965,6 @@ class _$GoToNextPageImpl implements GoToNextPage {
     TResult Function(Empty value)? empty,
     TResult Function(ShowSnackBar value)? showSnackBar,
     TResult Function(ShowDialog value)? showDialog,
-    TResult Function(ShowErrorDialog value)? showErrorDialog,
     TResult Function(GoToPrevPage value)? goToPrevPage,
     TResult Function(GoToNextPage value)? goToNextPage,
     required TResult orElse(),

@@ -5,7 +5,9 @@ class OneTimeNgCubit extends Cubit<OneTimeNgState> {
   OneTimeNgCubit() : super(const OneTimeNgState(OneTimeNgStatus.initial, 0, 0, 0));
 
   void onTapIncrementA() {
-    final newState = state.copyWith(counterA: state.counterA + 1);
+    final newState = state.copyWith(
+      counterA: state.counterA + 1,
+    );
     emit(newState);
   }
 
@@ -21,7 +23,7 @@ class OneTimeNgCubit extends Cubit<OneTimeNgState> {
 
   void onTapLoadData() async {
     emit(state.copyWith(status: OneTimeNgStatus.loading));
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(milliseconds: 500));
     emit(state.copyWith(status: OneTimeNgStatus.success));
   }
 }
@@ -93,25 +95,25 @@ class _Contents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<OneTimeNgCubit, OneTimeNgState>(builder: (context, state) {
-      Widget dataLoadWidget;
+      Widget loadButton;
       if (state.status == OneTimeNgStatus.loading) {
-        dataLoadWidget = const CircularProgressIndicator();
+        loadButton = const CircularProgressIndicator();
       } else {
-        dataLoadWidget = Column(
-          children: [
-            Text('status: ${state.status.name}', style: Theme.of(context).textTheme.headlineMedium),
-            OutlinedButton(
-              onPressed: context.read<OneTimeNgCubit>().onTapLoadData,
-              child: Text('Load Data', style: Theme.of(context).textTheme.headlineMedium),
-            )
-          ],
+        loadButton = OutlinedButton(
+          onPressed: context.read<OneTimeNgCubit>().onTapLoadData,
+          child: Text('Load Data', style: Theme.of(context).textTheme.headlineMedium),
         );
       }
 
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          dataLoadWidget,
+          Column(
+            children: [
+              Text('status: ${state.status.name}', style: Theme.of(context).textTheme.headlineMedium),
+              loadButton,
+            ],
+          ),
           const SizedBox(height: 10),
           Container(height: 1, color: Colors.black),
           const SizedBox(height: 10),
