@@ -6,14 +6,9 @@ import 'package:flutter_bloc_abc_studio/feature/one_time/one_time.dart';
 import 'package:flutter_bloc_abc_studio/feature/one_time/one_time_ng.dart';
 import 'package:flutter_bloc_abc_studio/feature/one_time/one_time_ng2.dart';
 import 'package:flutter_bloc_abc_studio/feature/sample/sample_view.dart';
-import 'package:flutter_bloc_abc_studio/feature/sample_selector/sample_selector_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/selector/selector_good.dart';
 import 'package:flutter_bloc_abc_studio/feature/selector/selector_ng.dart';
 import 'package:flutter_bloc_abc_studio/feature/selector/selector_ng2.dart';
-import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_copy.dart';
-import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_copywith.dart';
-import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_error.dart';
-import 'package:flutter_bloc_abc_studio/feature/state_emit/emit_freezed.dart';
 import 'package:flutter_bloc_abc_studio/my_bloc_observer.dart';
 
 void main() {
@@ -24,10 +19,6 @@ void main() {
 List<TitleAndWidget> get _screens => [
       const TitleAndWidget('Cubit vs Bloc, Bloc', CounterBlocView()),
       const TitleAndWidget('Cubit vs Bloc, Cubit', CounterCubitView()),
-      const TitleAndWidget('#1 emit() 동작 안 함', EmitErrorView()),
-      const TitleAndWidget('#2 emit() 수동 복사', EmitCopyView()),
-      const TitleAndWidget('#3 emit() copyWith', EmitCopyWithView()),
-      const TitleAndWidget('#4 emit() freezed', EmitFreezedView()),
       const TitleAndWidget('#1 일회성 동작, NG', OneTimeNgView()),
       const TitleAndWidget('#2 일회성 동작, NG2', OneTimeNg2View()),
       const TitleAndWidget('#3 일회성 동작, GOOD', OneTimeView()),
@@ -35,7 +26,6 @@ List<TitleAndWidget> get _screens => [
       const TitleAndWidget('#2 build 최적화, NG2', SelectorNg2View()),
       const TitleAndWidget('#3 build 최적화, Good', SelectorGoodView()),
       const TitleAndWidget('SampleBlocView', SampleBlocView()),
-      const TitleAndWidget('Sample Selector', SampleSelectorBlocView()),
     ];
 
 class MyApp extends StatelessWidget {
