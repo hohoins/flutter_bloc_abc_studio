@@ -8,6 +8,9 @@ Future Flutter 2024 sample code
 - [멀쩡한 앱을 Flutter 앱으로 다시 짠 이유 - 일본 1위 배달 앱, 두 번째 Recode](https://engineering.linecorp.com/ko/blog/demaecan-2nd-recode-kmm-to-flutter)
 - [Flutter 전환의 마침표 - 일본 1위 배달 앱, 세 번째 Recode](https://techblog.lycorp.co.jp/ko/demaecan-3rd-recode-react-native-to-flutter)
 - [Android 신입 개발자, Flutter로 기술 전환 가보자고](https://engineering.linecorp.com/ko/blog/flutter-onboarding-for-new-employees)
+- [인프런 퇴근길 밋업 - Flutter 엔지니어로 직무 전환한 이야기](https://youtu.be/By9k4vZ__Mk?si=_LVIrB4bVoZwFn7H)
+- [인프런 퇴근길 밋업 - Flutter 프로젝트에 테스트 들이붓기](https://youtu.be/_ZGcgTSuHmc?si=u1-ZGxKp5vewc_81)
+- [인프런 퇴근길 밋업 - Flutter Canvas로 어디까지 해봤니?](https://youtu.be/k3Q2jKKQMcg?si=sDll5401ibU5X7an)
 # ABC Studio blog
 - [일본 1위 배달 앱, 바닥부터 다시 짠다 - Recode 프로젝트](https://engineering.linecorp.com/ko/blog/about-demaecan-recode-project)
 - [1,100km 떨어져 있는 사용자를 위한 UX 리서치부터 과감한 리뉴얼까지의 기록](https://techblog.lycorp.co.jp/ko/how-to-ux-research-and-renewal-for-overseas-users)
