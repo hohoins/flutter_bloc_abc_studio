@@ -1,6 +1,7 @@
 # flutter_bloc_abc_studio
 Future Flutter 2024 sample code
 # ABC Studio flutter blog
+- [Flutter Web을 활용해 제품 개발 환경 개선하기](https://techblog.lycorp.co.jp/ko/improve-development-experience-with-flutter-web)
 - [Flutter 인기 아키텍처 라이브러리 3종 비교 분석 - GetX vs BLoC vs Provider](https://engineering.linecorp.com/ko/blog/flutter-architecture-getx-bloc-provider)
 - [Flutter에서 커스텀 린트 활용하기](https://techblog.lycorp.co.jp/ko/using-custom-lint-in-flutter)
 - [Flutter 패키지로 공통 모듈 리팩토링하기](https://engineering.linecorp.com/ko/blog/common-module-refactoring-with-flutter-package)
