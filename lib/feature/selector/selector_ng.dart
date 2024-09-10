@@ -88,7 +88,7 @@ class SelectorNgView extends StatelessWidget {
                 BlocBuilder<SelectorNgCubit, SelectorNgState>(
                   builder: (context, state) {
                     return ColorEffect(
-                      child: Text('[B + C]   ${state.counterA + state.counterB}',
+                      child: Text('[B + C]   ${state.counterB + state.counterC}',
                           style: state.isHighlight == true
                               ? Theme.of(context).textTheme.headlineLarge
                               : Theme.of(context).textTheme.headlineSmall),

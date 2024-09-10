@@ -34,6 +34,15 @@ class OneTimeNg2Cubit extends Cubit<OneTimeNg2State> {
     }
   }
 
+  void _showDialog(String message) {
+    emit(
+      state.copyWith(
+        status: OneTimeNg2Status.showDialog,
+        dialogMessage: message,
+      ),
+    );
+  }
+
   void _goToNextPage() {
     emit(
       state.copyWith(
@@ -46,17 +55,8 @@ class OneTimeNg2Cubit extends Cubit<OneTimeNg2State> {
   void _goToPrevPage() {
     emit(state.copyWith(
       status: OneTimeNg2Status.goToPrevPage,
-      prevPageData: 404,
+      prevPageData: -1,
     ));
-  }
-
-  void _showDialog(String message) {
-    emit(
-      state.copyWith(
-        status: OneTimeNg2Status.showDialog,
-        dialogMessage: message,
-      ),
-    );
   }
 }
 
@@ -65,8 +65,8 @@ enum OneTimeNg2Status {
   loading,
   success,
   showDialog,
-  goToPrevPage,
   goToNextPage,
+  goToPrevPage,
 }
 
 class OneTimeNg2State {
@@ -76,16 +76,16 @@ class OneTimeNg2State {
     this.counterB,
     this.counterC,
     this.dialogMessage,
-    this.prevPageData,
     this.nextPageData,
+    this.prevPageData,
   );
   final OneTimeNg2Status status;
   final int counterA;
   final int counterB;
   final int counterC;
   final String dialogMessage;
-  final int prevPageData;
   final int nextPageData;
+  final int prevPageData;
 
   OneTimeNg2State copyWith({
     OneTimeNg2Status? status,
