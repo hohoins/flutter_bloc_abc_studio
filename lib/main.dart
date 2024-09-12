@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_abc_studio/feature/api/api_view.dart';
 import 'package:flutter_bloc_abc_studio/feature/counter/counter_bloc.dart';
 import 'package:flutter_bloc_abc_studio/feature/counter/counter_cubit.dart';
 import 'package:flutter_bloc_abc_studio/feature/one_time/one_time.dart';
@@ -25,6 +26,7 @@ List<TitleAndWidget> get _screens => [
       const TitleAndWidget('#1 build 최적화, NG', SelectorNgView()),
       const TitleAndWidget('#2 build 최적화, NG2', SelectorNg2View()),
       const TitleAndWidget('#3 build 최적화, Good', SelectorGoodView()),
+      const TitleAndWidget('#bloc test, Large', ApiBlocView()),
       const TitleAndWidget('SampleBlocView', SampleBlocView()),
     ];
 
