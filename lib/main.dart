@@ -26,7 +26,7 @@ List<TitleAndWidget> get _screens => [
       const TitleAndWidget('#1 build 최적화, NG', SelectorNgView()),
       const TitleAndWidget('#2 build 최적화, NG2', SelectorNg2View()),
       const TitleAndWidget('#3 build 최적화, Good', SelectorGoodView()),
-      const TitleAndWidget('#bloc test, Large', ApiBlocView()),
+      const TitleAndWidget('bloc test', ApiBlocView()),
       const TitleAndWidget('SampleBlocView', SampleBlocView()),
     ];
 

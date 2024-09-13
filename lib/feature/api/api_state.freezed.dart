@@ -165,30 +165,24 @@ class __$$ApiStateImplCopyWithImpl<$Res>
 
 class _$ApiStateImpl implements _ApiState {
   const _$ApiStateImpl(
-      {this.status = ApiStatus.initial,
-      this.serverData = '',
-      this.counterA = 0,
-      this.counterB = 0,
-      this.counterC = 0,
-      this.isHighlight = false});
+      {required this.status,
+      required this.serverData,
+      required this.counterA,
+      required this.counterB,
+      required this.counterC,
+      required this.isHighlight});
 
   @override
-  @JsonKey()
   final ApiStatus status;
   @override
-  @JsonKey()
   final String serverData;
   @override
-  @JsonKey()
   final int counterA;
   @override
-  @JsonKey()
   final int counterB;
   @override
-  @JsonKey()
   final int counterC;
   @override
-  @JsonKey()
   final bool? isHighlight;
 
   @override
@@ -229,12 +223,12 @@ class _$ApiStateImpl implements _ApiState {
 
 abstract class _ApiState implements ApiState {
   const factory _ApiState(
-      {final ApiStatus status,
-      final String serverData,
-      final int counterA,
-      final int counterB,
-      final int counterC,
-      final bool? isHighlight}) = _$ApiStateImpl;
+      {required final ApiStatus status,
+      required final String serverData,
+      required final int counterA,
+      required final int counterB,
+      required final int counterC,
+      required final bool? isHighlight}) = _$ApiStateImpl;
 
   @override
   ApiStatus get status;

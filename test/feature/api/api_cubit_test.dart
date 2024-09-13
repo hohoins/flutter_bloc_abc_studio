@@ -14,6 +14,21 @@ void main() {
   );
 
   blocTest(
+    'A 더하기, 한땀 한땀',
+    build: () => ApiCubit(),
+    act: (cubit) => cubit.onTapIncrementA(),
+    expect: () => [
+      const TypeMatcher<ApiState>()
+          .having((state) => state.status, 'status', ApiStatus.initial)
+          .having((state) => state.counterA, 'counterA', 1)
+          .having((state) => state.counterB, 'counterB', 0)
+          .having((state) => state.counterC, 'counterC', 0)
+          .having((state) => state.serverData, 'serverData', '')
+          .having((state) => state.isHighlight, 'isHighlight', false)
+    ],
+  );
+
+  blocTest(
     'A 더하기, freezed equal 사용',
     build: () => ApiCubit(),
     act: (cubit) {

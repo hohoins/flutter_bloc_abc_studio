@@ -7,11 +7,11 @@ enum ApiStatus { initial, loading, success }
 @freezed
 class ApiState with _$ApiState {
   const factory ApiState({
-    @Default(ApiStatus.initial) ApiStatus status,
-    @Default('') String serverData,
-    @Default(0) int counterA,
-    @Default(0) int counterB,
-    @Default(0) int counterC,
-    @Default(false) bool? isHighlight,
+    required ApiStatus status,
+    required String serverData,
+    required int counterA,
+    required int counterB,
+    required int counterC,
+    required bool? isHighlight,
   }) = _ApiState;
 }
