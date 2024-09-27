@@ -1,5 +1,9 @@
 # flutter_bloc_abc_studio
-Future Flutter 2024 sample code
+- Future Flutter 2024 sample code
+
+# Slide
+- [Flurtter Bloc을 제품 개발에 야무지게 적용하기.pdf](https://github.com/hohoins/flutter_bloc_abc_studio/blob/main/future_flutter_2024_jungyunchoi.pdf)
+
 # ABC Studio flutter blog
 - [Flutter Web을 활용해 제품 개발 환경 개선하기](https://techblog.lycorp.co.jp/ko/improve-development-experience-with-flutter-web)
 - [Flutter 인기 아키텍처 라이브러리 3종 비교 분석 - GetX vs BLoC vs Provider](https://engineering.linecorp.com/ko/blog/flutter-architecture-getx-bloc-provider)
